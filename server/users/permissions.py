@@ -10,9 +10,10 @@ class IsAdmin(permissions.BasePermission):
         return request.user and request.user.is_authenticated and request.user.role == UserRole.ADMIN
 
 
-class IsContractor(permissions.BasePermission):
+class IsAListHomePro(permissions.BasePermission):
     """
-    Permission check for contractor users.
+    Permission check for A-List Home Pro users.
+    Note: Internally still uses UserRole.CONTRACTOR for backward compatibility.
     """
     def has_permission(self, request, view):
         return request.user and request.user.is_authenticated and request.user.role == UserRole.CONTRACTOR

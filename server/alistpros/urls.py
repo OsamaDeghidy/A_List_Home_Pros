@@ -34,7 +34,10 @@ urlpatterns = [
         # Auth and user management
         path('users/', include('users.urls')),
         
-        # Contractor management
+        # A-List Home Pros management (new name for contractors)
+        path('alistpros/', include('alistpros_profiles.urls')),
+        
+        # Legacy contractor endpoints (kept for backward compatibility)
         path('contractors/', include('contractors.urls')),
         
         # Payment processing

@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'users',
     'core',
     'contractors',
+    'alistpros_profiles',  # New app for A-List Home Pros
     'payments',
     'leads',
     'messaging',
@@ -96,6 +97,7 @@ WSGI_APPLICATION = 'alistpros.wsgi.application'
 # Database configuration
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# Use DATABASE_URL from .env file
 DATABASE_URL = config('DATABASE_URL', default='sqlite:///db.sqlite3')
 
 if DATABASE_URL.startswith('postgres'):

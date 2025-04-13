@@ -12,7 +12,7 @@ from .serializers import (
     ContractorReviewSerializer
 )
 from .filters import ContractorFilter
-from users.permissions import IsContractor, IsClient, IsAdmin, IsOwnerOrAdmin
+from users.permissions import IsAListHomePro, IsClient, IsAdmin, IsOwnerOrAdmin
 from users.models import UserRole
 
 
@@ -53,7 +53,7 @@ class ContractorProfileCreateView(generics.CreateAPIView):
     Create a contractor profile (for contractors only)
     """
     serializer_class = ContractorProfileCreateUpdateSerializer
-    permission_classes = [IsContractor]
+    permission_classes = [IsAListHomePro]
 
     def perform_create(self, serializer):
         # Check if user already has a contractor profile
@@ -68,7 +68,7 @@ class ContractorProfileUpdateView(generics.UpdateAPIView):
     Update a contractor profile (owner only)
     """
     serializer_class = ContractorProfileCreateUpdateSerializer
-    permission_classes = [IsContractor]
+    permission_classes = [IsAListHomePro]
 
     def get_object(self):
         return get_object_or_404(ContractorProfile, user=self.request.user)

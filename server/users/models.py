@@ -7,7 +7,7 @@ from core.models import TimeStampedModel
 
 class UserRole(models.TextChoices):
     CLIENT = 'client', _('Client')
-    CONTRACTOR = 'contractor', _('Contractor')
+    CONTRACTOR = 'contractor', _('A-List Home Pro')
     CREW = 'crew', _('Crew')
     SPECIALIST = 'specialist', _('Specialist')
     ADMIN = 'admin', _('Admin')
